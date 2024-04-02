@@ -27,15 +27,15 @@ class RootController < ApplicationController
     grouped_pages = pages.group_by do |page|
       begin
         PublicSuffix.parse(page[:url].host).domain
-      rescue => e
-        raise e
+      rescue PublicSuffix::DomainNotAllowed => _e
+        "unknown (#{page[:url]})"
       end
     end
 
     # pp grouped_pages
     grouped_pages = grouped_pages.map { |key, value|
       new_value = value.sort_by { |page| page[:url].host }
-      [key || '不明', new_value]
+      [key || 'Unknown', new_value]
     }.to_h.sort
 
     markdown_text = ''

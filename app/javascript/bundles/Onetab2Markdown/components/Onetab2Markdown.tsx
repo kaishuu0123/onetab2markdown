@@ -22,8 +22,8 @@ const useDebounce = (value: string, delay: number): string => {
   return debouncedValue
 }
 
-const Onetab2Markdown: React.FC = (_prop) => {
-  const [onetabText, setOnetabText] = useState<string>('')
+const OneTab2Markdown: React.FC = (_prop) => {
+  const [onetabText, setOneTabText] = useState<string>('')
   const [markdownText, setMarkdownText] = useState<string>('')
   const debouncedValue = useDebounce(onetabText, 500)
 
@@ -67,19 +67,22 @@ const Onetab2Markdown: React.FC = (_prop) => {
       return
     }
 
-    setOnetabText(value)
+    setOneTabText(value)
   }
 
   return (
-    <div className="container my-3">
+    <div className="container">
       <div className="row">
         <div className="col-12">
-          <div className="alert alert-info" role="alert"></div>
+          <div className="alert alert-info" role="alert">
+            OneTab の「URLの読み込み/書き出し」からコピーしたテキストをドメイン別に振り分けて
+            markdown 化するツールです
+          </div>
         </div>
       </div>
       <div className="row">
         <div className="col-6">
-          <Label for="onetab-text">Onetab</Label>
+          <Label for="onetab-text">OneTab</Label>
           <Input
             type="textarea"
             name="onetab-text"
@@ -104,8 +107,8 @@ const Onetab2Markdown: React.FC = (_prop) => {
   )
 }
 
-Onetab2Markdown.propTypes = {
+OneTab2Markdown.propTypes = {
   // name: PropTypes.string.isRequired, // this is passed from the Rails view
 }
 
-export default Onetab2Markdown
+export default OneTab2Markdown
