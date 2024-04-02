@@ -6,6 +6,11 @@ interface ConvertResponse {
   markdownText: string
 }
 
+const ExampleForPlaceholder = `Example Input:
+https://www.google.com/ | Google
+https://www.yahoo.co.jp/ | Yahoo! JAPAN
+https://www.bing.com/ | Bing`
+
 const useDebounce = (value: string, delay: number): string => {
   const [debouncedValue, setDebouncedValue] = useState(value)
 
@@ -87,8 +92,9 @@ const OneTab2Markdown: React.FC = (_prop) => {
             type="textarea"
             name="onetab-text"
             id="onetab-text"
-            rows="20"
+            rows="30"
             onChange={onTextChange}
+            placeholder={ExampleForPlaceholder}
           />
         </div>
         <div className="col-6">
@@ -97,7 +103,7 @@ const OneTab2Markdown: React.FC = (_prop) => {
             type="textarea"
             name="markdown-text"
             id="markdown-text"
-            rows="20"
+            rows="30"
             value={markdownText}
             readOnly
           />
