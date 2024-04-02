@@ -38,6 +38,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'annotate'
+  gem 'letter_opener_web'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry'
 end
 
 group :development do
@@ -55,8 +61,21 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'rspec-request_describer'
+  gem 'rspec'
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop', require: false
+  gem 'simplecov', require: false
 end
 
 gem "react_on_rails", "= 13.4"
 
 gem "shakapacker", "= 7.2"
+
+gem "public_suffix"

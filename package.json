@@ -6,12 +6,15 @@
     "@babel/plugin-transform-runtime": "7",
     "@babel/preset-env": "7",
     "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "@babel/runtime": "7",
+    "@popperjs/core": "^2.11.8",
     "@types/babel__core": "7",
     "@types/webpack": "5",
     "babel-loader": "8",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "5.3.3",
     "compression-webpack-plugin": "9",
     "css-loader": "^6.10.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
@@ -20,6 +23,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-on-rails": "13.4.0",
+    "reactstrap": "^9.2.2",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
     "shakapacker": "7.2.0",
     "style-loader": "^3.3.4",
     "terser-webpack-plugin": "5",
@@ -31,7 +37,8 @@
   "version": "0.1.0",
   "babel": {
     "presets": [
-      "./node_modules/shakapacker/package/babel/preset.js"
+      "./node_modules/shakapacker/package/babel/preset.js",
+      "@babel/preset-react"
     ]
   },
   "browserslist": [
@@ -39,7 +46,18 @@
   ],
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@types/react": "^18.2.73",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.34.1",
+    "prettier": "^3.2.5",
     "react-refresh": "^0.14.0",
+    "typescript": "^5.4.3",
     "webpack-dev-server": "4"
   }
 }

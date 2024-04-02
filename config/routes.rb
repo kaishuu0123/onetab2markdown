@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root "root#index"
+  post "/convert", to: "root#convert"
+
   get 'hello_world', to: 'hello_world#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

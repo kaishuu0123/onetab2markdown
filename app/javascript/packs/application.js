@@ -13,3 +13,12 @@
 //
 // const images = require.context('./images', true)
 // const imagePath = (name) => images(name, true)
+
+import ReactOnRails from 'react-on-rails';
+
+import Onetab2Markdown from '../bundles/Onetab2Markdown/components/Onetab2Markdown';
+
+// This is how react_on_rails can see the Onetab2Markdown in the browser.
+ReactOnRails.register({
+  Onetab2Markdown,
+});
