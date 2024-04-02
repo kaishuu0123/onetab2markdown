@@ -11,6 +11,49 @@ https://www.google.com/ | Google
 https://www.yahoo.co.jp/ | Yahoo! JAPAN
 https://www.bing.com/ | Bing`
 
+const useMarkdownText = (path: string, onetabText: string): string => {
+  const [markdownText, setMarkdownText] = useState('')
+
+  useEffect(() => {
+    let ignore = false
+
+    const getMarkdownText = async (): Promise<void> => {
+      try {
+        const headers = ReactOnRails.authenticityHeaders({
+          'Content-Type': 'application/json'
+        })
+        const options = {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ text: onetabText })
+        }
+        const response = await fetch(path, options)
+        const json = (await response.json()) as ConvertResponse
+        if (json == null) {
+          return
+        }
+        if (!ignore) {
+          setMarkdownText(json.markdownText)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getMarkdownText()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error)
+      })
+
+    return () => {
+      ignore = true
+    }
+  }, [onetabText])
+
+  return markdownText
+}
+
 const useDebounce = (value: string, delay: number): string => {
   const [debouncedValue, setDebouncedValue] = useState(value)
 
@@ -29,42 +72,8 @@ const useDebounce = (value: string, delay: number): string => {
 
 const OneTab2Markdown: React.FC = (_prop) => {
   const [onetabText, setOneTabText] = useState<string>('')
-  const [markdownText, setMarkdownText] = useState<string>('')
   const debouncedValue = useDebounce(onetabText, 500)
-
-  useEffect(() => {
-    if (onetabText === '') {
-      return
-    }
-
-    const getMarkdownText = async (): Promise<void> => {
-      try {
-        const headers = ReactOnRails.authenticityHeaders({
-          'Content-Type': 'application/json'
-        })
-        const path = 'convert'
-        const options = {
-          method: 'POST',
-          headers,
-          body: JSON.stringify({ text: onetabText })
-        }
-        const response = await fetch(path, options)
-        const json = (await response.json()) as ConvertResponse
-        if (json == null) {
-          return
-        }
-        setMarkdownText(json.markdownText)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getMarkdownText()
-      .then(() => {})
-      .catch((err) => {
-        console.error(err)
-      })
-  }, [debouncedValue])
+  const markdownText = useMarkdownText('convert', debouncedValue)
 
   const onTextChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e?.target?.value
