@@ -43,11 +43,13 @@
       },
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "dbaeumer.vscode-eslint",
         "cschleiden.vscode-github-actions",
         "msjsdiag.debugger-for-chrome",
         "firefox-devtools.vscode-firefox-debug",
         "editorconfig.editorconfig",
+        "vscode-icons-team.vscode-icons",
+        "Shopify.ruby-lsp",
+        "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
         "mikestead.dotenv",
