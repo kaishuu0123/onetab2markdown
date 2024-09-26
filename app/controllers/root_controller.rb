@@ -16,7 +16,7 @@ class RootController < ApplicationController
 
       next if url&.strip&.empty? || title&.strip&.empty?
 
-      url = URI.parse(url.strip)
+      url = Addressable::URI.parse(url.strip)
       pages.push({
         url: url,
         title: title && title.strip,
