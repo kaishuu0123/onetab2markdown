@@ -28,7 +28,9 @@ class RootController < ApplicationController
       begin
         PublicSuffix.parse(page[:url].host).domain
       rescue PublicSuffix::DomainNotAllowed => _e
-        "unknown (#{page[:url]})"
+        "DomainNotAllowed: unknown (#{page[:url]})"
+      rescue PublicSuffix::DomainInvalid => _e
+        "DomainInvalid: unknown (#{page[:url]})"
       end
     end
 
