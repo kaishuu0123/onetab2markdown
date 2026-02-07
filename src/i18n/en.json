@@ -1,0 +1,35 @@
+{
+  "translation": {
+    "app": {
+      "title": "OneTab2Markdown",
+      "description": "A tool to convert OneTab exported text into markdown format, organized by domain"
+    },
+    "settings": {
+      "language": "Language"
+    },
+    "sections": {
+      "onetab": "OneTab",
+      "markdown": "Markdown"
+    },
+    "placeholder": {
+      "input": "Paste OneTab format text here\nExample:\nhttps://example.com | Page Title",
+      "output": "Conversion result will be displayed here"
+    },
+    "modes": {
+      "asIs": "As-is (Convert only)",
+      "sort": "Sort by domain",
+      "group": "Group by domain"
+    },
+    "buttons": {
+      "convert": "Convert",
+      "copy": "Copy"
+    },
+    "messages": {
+      "copied": "Copied!",
+      "copyFailed": "Failed to copy"
+    },
+    "footer": {
+      "github": "GitHub"
+    }
+  }
+}
