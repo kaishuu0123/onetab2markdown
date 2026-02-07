@@ -3,11 +3,16 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Enable Corepack for Yarn 4
+RUN corepack enable
+
 COPY package*.json ./
+COPY .yarnrc.yml ./
+COPY yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 COPY . .
-RUN npm run build
+RUN yarn build
 
 # Production stage
 FROM nginx:alpine
