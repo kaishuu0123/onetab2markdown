@@ -7,6 +7,10 @@
     "settings": {
       "language": "言語"
     },
+    "tabs": {
+      "convert": "変換",
+      "triage": "トリアージ"
+    },
     "sections": {
       "onetab": "OneTab",
       "markdown": "Markdown"
@@ -22,11 +26,24 @@
     },
     "buttons": {
       "convert": "変換",
-      "copy": "コピー"
+      "copy": "コピー",
+      "copyMarkdown": "Markdown",
+      "copyOneTab": "OneTab"
     },
     "messages": {
       "copied": "コピーしました！",
       "copyFailed": "コピーに失敗しました"
+    },
+    "triage": {
+      "pasteUrls": "OneTab形式のテキストを貼り付けてください",
+      "start": "トリアージを開始",
+      "remaining": "残り",
+      "keep": "保存",
+      "later": "後で",
+      "delete": "削除",
+      "pending": "未処理",
+      "complete": "トリアージ完了",
+      "reset": "リセット"
     },
     "footer": {
       "github": "GitHub"

@@ -7,6 +7,10 @@
     "settings": {
       "language": "Language"
     },
+    "tabs": {
+      "convert": "Convert",
+      "triage": "Triage"
+    },
     "sections": {
       "onetab": "OneTab",
       "markdown": "Markdown"
@@ -22,11 +26,24 @@
     },
     "buttons": {
       "convert": "Convert",
-      "copy": "Copy"
+      "copy": "Copy",
+      "copyMarkdown": "Markdown",
+      "copyOneTab": "OneTab"
     },
     "messages": {
       "copied": "Copied!",
       "copyFailed": "Failed to copy"
+    },
+    "triage": {
+      "pasteUrls": "Paste OneTab format text",
+      "start": "Start Triage",
+      "remaining": "Remaining",
+      "keep": "Keep",
+      "later": "Later",
+      "delete": "Delete",
+      "pending": "Pending",
+      "complete": "Triage Complete",
+      "reset": "Reset"
     },
     "footer": {
       "github": "GitHub"
