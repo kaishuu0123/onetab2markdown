@@ -52,6 +52,35 @@ header h1 {
   margin: 1rem 0;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  color: #7f8c8d;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  color: #3498db;
+}
+
+.tab.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -184,6 +213,315 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Triage Mode */
+.triage-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.triage-setup .panel {
+  width: 100%;
+}
+
+.triage-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.triage-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  min-width: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item.keep {
+  background-color: #d5f4e6;
+  border: 2px solid #2ecc71;
+}
+
+.stat-item.later {
+  background-color: #fef5e7;
+  border: 2px solid #f39c12;
+}
+
+.stat-item.delete {
+  background-color: #fadbd8;
+  border: 2px solid #e74c3c;
+}
+
+.stat-item.pending {
+  background-color: #e8f4fd;
+  border: 2px solid #3498db;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.25rem;
+}
+
+.stat-count {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.triage-progress {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3498db;
+}
+
+.triage-card {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.triage-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+.triage-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+.triage-url {
+  display: block;
+  color: #3498db;
+  text-decoration: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+}
+
+.triage-url:hover {
+  text-decoration: underline;
+}
+
+.triage-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+.triage-btn {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 60px;
+}
+
+.triage-btn.keep {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.triage-btn.keep:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.triage-btn.later {
+  background-color: #f39c12;
+  color: white;
+}
+
+.triage-btn.later:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+.triage-btn.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.triage-btn.delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.triage-complete {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.triage-complete h2 {
+  color: #2ecc71;
+  font-size: 2rem;
+}
+
+/* Triage Lists */
+.triage-lists {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #ddd;
+}
+
+.triage-list {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.triage-list.keep {
+  border-left: 4px solid #2ecc71;
+}
+
+.triage-list.later {
+  border-left: 4px solid #f39c12;
+}
+
+.triage-list.delete {
+  border-left: 4px solid #e74c3c;
+}
+
+.triage-list.pending {
+  border-left: 4px solid #3498db;
+}
+
+.triage-list h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.copy-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-list-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.copy-list-btn.markdown {
+  background-color: #3498db;
+}
+
+.copy-list-btn.markdown:hover {
+  background-color: #2980b9;
+}
+
+.copy-list-btn.onetab {
+  background-color: #9b59b6;
+}
+
+.copy-list-btn.onetab:hover {
+  background-color: #8e44ad;
+}
+
+.triage-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.triage-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.triage-list li:last-child {
+  border-bottom: none;
+}
+
+.triage-list a {
+  color: #3498db;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+.triage-list a:hover {
+  text-decoration: underline;
+}
+
+.deleted-item {
+  color: #7f8c8d;
+  text-decoration: line-through;
+}
+
 /* モバイル: 縦並び */
 @media (max-width: 768px) {
   .controls {
@@ -199,5 +537,40 @@ footer a:hover {
 
   textarea {
     min-height: 300px;
+  }
+
+  .triage-actions {
+    flex-direction: column;
+  }
+
+  .triage-card {
+    padding: 1.5rem;
+  }
+
+  .triage-stats {
+    gap: 1rem;
+  }
+
+  .stat-item {
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-count {
+    font-size: 1.5rem;
+  }
+
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copy-buttons {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
