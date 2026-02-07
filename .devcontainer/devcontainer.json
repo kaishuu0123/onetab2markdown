@@ -1,64 +1,33 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ruby
 {
-  "name": "onetab2markdown devcontainer",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "name": "OneTab2Markdown Dev Container",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-
-  // Features to add to the dev container. More info: https://containers.dev/features.
+  
   "features": {
-    "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.2.2"
-    },
     "ghcr.io/devcontainers/features/node:1": {
-      "version": "20.12.0"
+      "version": "lts"
     }
   },
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "ruby --version",
-  "postCreateCommand": "gem install bundler --version 2.5.7",
-
-  // Configure tool-specific properties.
-  // "customizations": {},
-
   "customizations": {
     "vscode": {
-      // Set *default* container specific settings.json values on container create.
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
-        "terminal.integrated.profiles.linux": {
-          "bash": {
-            "path": "/bin/bash",
-            "args": ["-l"]
-          }
-        },
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "eslint.workingDirectories": [{ "mode": "auto" }],
-        "rubyLsp.rubyVersionManager": "none"
-      },
-      // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "cschleiden.vscode-github-actions",
-        "msjsdiag.debugger-for-chrome",
-        "firefox-devtools.vscode-firefox-debug",
-        "editorconfig.editorconfig",
-        "vscode-icons-team.vscode-icons",
-        "Shopify.ruby-lsp",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "mikestead.dotenv",
-        "mhutchie.git-graph",
-        "eamodio.gitlens"
-      ]
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
     }
-  }
+  },
 
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  "forwardPorts": [3000],
+  
+  "postCreateCommand": "corepack enable && yarn install",
+  
+  "remoteUser": "vscode"
 }

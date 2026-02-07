@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>OneTab2Markdown - OneTabのURLをMarkdownに変換</title>
+    <meta
+      name="title"
+      content="OneTab2Markdown - OneTabのURLをMarkdownに変換"
+    />
+    <meta
+      name="description"
+      content="OneTabの「URLの読み込み/書き出し」からコピーしたテキストを、ドメイン別に整理してMarkdown形式に変換する無料ツール。ブラウザ上で完結、データは保存されません。"
+    />
+    <meta
+      name="keywords"
+      content="OneTab,Markdown,変換,ツール,URL整理,ブックマーク,タブ管理"
+    />
+    <meta name="author" content="OneTab2Markdown" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta
+      property="og:title"
+      content="OneTab2Markdown - OneTabのURLをMarkdownに変換"
+    />
+    <meta
+      property="og:description"
+      content="OneTabの「URLの読み込み/書き出し」からコピーしたテキストを、ドメイン別に整理してMarkdown形式に変換する無料ツール。"
+    />
+    <meta property="og:image" content="https://yourdomain.com/og-image.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yourdomain.com/" />
+    <meta
+      property="twitter:title"
+      content="OneTab2Markdown - OneTabのURLをMarkdownに変換"
+    />
+    <meta
+      property="twitter:description"
+      content="OneTabの「URLの読み込み/書き出し」からコピーしたテキストを、ドメイン別に整理してMarkdown形式に変換する無料ツール。"
+    />
+    <meta
+      property="twitter:image"
+      content="https://yourdomain.com/twitter-image.png"
+    />
+
+    <!-- Alternate Language -->
+    <link rel="alternate" hreflang="ja" href="https://yourdomain.com/" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://yourdomain.com/?lang=en"
+    />
+    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yourdomain.com/" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "OneTab2Markdown",
+        "description": "OneTabの「URLの読み込み/書き出し」からコピーしたテキストを、ドメイン別に整理してMarkdown形式に変換する無料ツール",
+        "url": "https://yourdomain.com/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "inLanguage": ["ja", "en"],
+        "featureList": [
+          "OneTab形式のテキストをMarkdownに変換",
+          "ドメインごとに整理・グループ化",
+          "ブラウザ上で完結（データ保存なし）",
+          "日本語・英語対応"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- クローラー用の静的コンテンツ -->
+      <div style="max-width: 1400px; margin: 0 auto; padding: 2rem">
+        <header style="text-align: center; margin-bottom: 2rem">
+          <h1>OneTab2Markdown</h1>
+          <p
+            style="
+              color: #7f8c8d;
+              background-color: #e3f2fd;
+              padding: 1rem;
+              border-radius: 8px;
+            "
+          >
+            OneTab の URL
+            の読み込み/書き出しからコピーしたテキストをドメイン別に振り分けて
+            markdown 化するツールです
+          </p>
+        </header>
+
+        <main>
+          <section style="margin-bottom: 2rem">
+            <h2>主な機能</h2>
+            <ul>
+              <li>OneTab形式のテキストをMarkdownリンクに変換</li>
+              <li>ドメインごとに自動整理・グループ化</li>
+              <li>ドメインでソート、またはそのまま変換も可能</li>
+              <li>ブラウザ上で完結（データは保存されません）</li>
+              <li>日本語・英語の2言語対応</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>使い方</h2>
+            <ol>
+              <li>OneTabで「URLの読み込み/書き出し」を開く</li>
+              <li>「すべてのタブとウィンドウを書き出し」をクリック</li>
+              <li>コピーしたテキストを貼り付け</li>
+              <li>変換モードを選択（そのまま/ソート/グループ化）</li>
+              <li>「変換」ボタンをクリック</li>
+              <li>生成されたMarkdownをコピー</li>
+            </ol>
+          </section>
+        </main>
+
+        <footer
+          style="
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+          "
+        >
+          <a
+            href="https://github.com/kaishuu0123/onetab2markdown"
+            style="color: #3498db"
+            >GitHub</a
+          >
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

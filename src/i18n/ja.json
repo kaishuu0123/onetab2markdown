@@ -1,0 +1,35 @@
+{
+  "translation": {
+    "app": {
+      "title": "OneTab2Markdown",
+      "description": "OneTab の URL の読み込み/書き出しからコピーしたテキストをドメイン別に振り分けて markdown 化するツールです"
+    },
+    "settings": {
+      "language": "言語"
+    },
+    "sections": {
+      "onetab": "OneTab",
+      "markdown": "Markdown"
+    },
+    "placeholder": {
+      "input": "OneTab形式のテキストを貼り付けてください\n例:\nhttps://example.com | ページタイトル",
+      "output": "変換結果がここに表示されます"
+    },
+    "modes": {
+      "asIs": "そのまま（変換のみ）",
+      "sort": "ドメインごとにソート",
+      "group": "ドメインごとにグループ化"
+    },
+    "buttons": {
+      "convert": "変換",
+      "copy": "コピー"
+    },
+    "messages": {
+      "copied": "コピーしました！",
+      "copyFailed": "コピーに失敗しました"
+    },
+    "footer": {
+      "github": "GitHub"
+    }
+  }
+}
