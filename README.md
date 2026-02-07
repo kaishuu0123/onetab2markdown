@@ -1,107 +1,146 @@
 # OneTab2Markdown
 
-OneTab の URL の読み込み/書き出しからコピーしたテキストをドメイン別に振り分けて markdown 化するツールです。
+Convert OneTab exported text into organized Markdown format, grouped or sorted by domain.
 
-## 技術スタック
+**[Live Demo](https://sandbox.saino.me/onetab2markdown/)**
 
-- **React 18** + **TypeScript**
-- **Vite** - 高速ビルドツール
-- **psl** - Public Suffix List を使った正確なドメイン抽出
-- **Yarn** - パッケージマネージャー
-- **Docker** + **Nginx** - プロダクションデプロイ
+## Features
 
-![Screenshot](screenshot.png)
+- Convert OneTab format text to Markdown links
+- Three conversion modes:
+  - **As-is**: Convert in original order
+  - **Sort by domain**: Alphabetically sort by domain
+  - **Group by domain**: Group with headers by domain
+- Browser-based (no data stored)
+- Multi-language support (Japanese/English)
+- One-click copy to clipboard
 
-## 機能
+## Usage
 
-- OneTab形式のテキストをMarkdownリンクに変換
-- ドメインごとにグループ化（オン/オフ切り替え可能）
-- ワンクリックでクリップボードにコピー
+1. Open OneTab and click "Import / Export URLs"
+2. Click "Export all windows and tabs"
+3. Paste the copied text into the left textarea
+4. Select conversion mode (as-is / sort / group)
+5. Click "Convert" button
+6. Copy the generated Markdown from the right textarea
 
-## 開発環境
+### Example Input (OneTab format)
 
-### Dev Container (推奨)
+```
+https://github.com/user/repo | GitHub Repository
+https://qiita.com/items/abc | Qiita Article
+https://zenn.dev/articles/123 | Zenn Article
+```
 
-このプロジェクトはDev Container構成を含んでいます。VS CodeとDockerがインストールされている場合：
+### Example Output (Group by domain mode)
 
-1. リポジトリをクローン
-2. VS Codeでフォルダを開く
-3. 「Dev Containerで再度開く」を選択
+```markdown
+# github.com - 1 URLs
 
-Dev Containerには以下が含まれます：
+- [GitHub Repository](https://github.com/user/repo)
+
+# qiita.com - 1 URLs
+
+- [Qiita Article](https://qiita.com/items/abc)
+
+# zenn.dev - 1 URLs
+
+- [Zenn Article](https://zenn.dev/articles/123)
+```
+
+## Development
+
+### Dev Container (Recommended)
+
+This project includes a Dev Container configuration. If you have VS Code and Docker installed:
+
+1. Clone the repository
+2. Open the folder in VS Code
+3. Click "Reopen in Container"
+
+The Dev Container includes:
+
 - Node.js LTS
-- 必要なVS Code拡張機能
-- 自動的な依存関係のインストール
+- Required VS Code extensions
+- Automatic dependency installation
 
-### ローカル開発
+### Local Development
 
-### 必要なもの
+#### Requirements
 
-- Node.js 20以上
+- Node.js 20+
 - Yarn
 
-### セットアップ
+#### Setup
 
 ```bash
-# 依存関係のインストール
+# Install dependencies
 yarn install
 
-# 開発サーバーの起動
+# Start development server
 yarn dev
 ```
 
-開発サーバーは http://localhost:3000 で起動します。
+Development server runs at http://localhost:3000
 
-### ビルド
+#### Build
 
 ```bash
 yarn build
 ```
 
-ビルドされたファイルは `dist` ディレクトリに出力されます。
+Built files are output to the `dist` directory.
 
-### Linting
+#### Linting
 
 ```bash
 yarn lint
 ```
 
-## Docker デプロイ
+## Docker Deployment
 
-### Docker Composeを使用
+### Using Docker Compose
 
 ```bash
-# イメージのビルドとコンテナの起動
+# Build and start container
 docker-compose up -d
 
-# ログの確認
+# View logs
 docker-compose logs -f
 
-# 停止
+# Stop
 docker-compose down
 ```
 
-アプリケーションは http://localhost:8080 でアクセスできます。
+Application will be accessible at http://localhost:8080
 
-### Dockerを直接使用
+### Using Docker directly
 
 ```bash
-# イメージのビルド
+# Build image
 docker build -t onetab2markdown .
 
-# コンテナの起動
+# Run container
 docker run -d -p 8080:80 --name onetab2markdown onetab2markdown
 ```
 
-## 使い方
+## SEO Features
 
-1. OneTabで「URLの読み込み/書き出し」を開く
-2. 「すべてのタブとウィンドウを書き出し」をクリック
-3. コピーしたテキストを左側のテキストエリアに貼り付け
-4. 「ドメインごとにグループ化」のオン/オフを選択
-5. 「変換」ボタンをクリック
-6. 右側に表示されたMarkdownをコピーして使用
+- Comprehensive meta tags (OGP, Twitter Card)
+- Structured data (JSON-LD Schema.org)
+- Static content for crawlers
+- Multi-language support (hreflang)
+- robots.txt and sitemap.xml
 
-## ライセンス
+## Tech Stack
+
+- **React 18** + **TypeScript**
+- **Vite** - Fast build tool
+- **psl** - Public Suffix List for accurate domain extraction
+- **react-i18next** - Internationalization (Japanese/English)
+- **Yarn** - Package manager
+- **Docker** + **Nginx** - Production deployment
+
+## License
 
 MIT

@@ -89,7 +89,8 @@ function App() {
         result = Object.entries(grouped)
           .sort(([domainA], [domainB]) => domainA.localeCompare(domainB))
           .map(([domain, domainItems]) => {
-            const header = `# ${domain}_${domainItems.length}件`;
+            const count = domainItems.length;
+            const header = `# ${domain} - ${count} URL${count !== 1 ? "s" : ""}`;
             const links = domainItems
               .map(({ url, title }) => `- [${title}](${url})`)
               .join("\n");
