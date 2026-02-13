@@ -25,10 +25,6 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [triageStarted, setTriageStarted] = useState(false);
 
-  // デバッグ用
-  console.log("Current language:", i18n.language);
-  console.log("Translation test:", t("app.title"));
-
   const extractDomain = (url: string): string => {
     try {
       const urlObj = new URL(url);
@@ -107,7 +103,7 @@ function App() {
         result = Object.entries(grouped)
           .sort(([domainA], [domainB]) => domainA.localeCompare(domainB))
           .map(([domain, domainItems]) => {
-            const header = `# ${domain}_${domainItems.length}件`;
+            const header = `# ${domain}_${domainItems.length} URL${domainItems.length !== 1 ? "s" : ""}`;
             const links = domainItems
               .map(({ url, title }) => `- [${title}](${url})`)
               .join("\n");
